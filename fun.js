@@ -1,72 +1,140 @@
 let queen = {
-    direction: "s",
-    position: "X , Y ",
-
+    x: 4,
+    y: 0
 };
+//        ^
+//        |
+//        |
+//        |
+//<------ Q ------->
+//        |
+//        | 
+//        |
+//        V   
 
-function changedirection(N, S, E, W, NE, NW, SE, SW) {
+N 2
+S 2
+SW 3
 
-    var direction = "change direction";
 
+function changedirection(steps, direction) {
+    var temp;
     switch (direction) {
-        case "direction N":
+        case "N":
+            temp = queen.y - steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
             console.log("direction N");
             break;
 
-        case "direction S":
+        case "S": 
+        temp = queen.y + steps;
+        if(boundary(temp) == true) {
+            queen.y = temp;
+        }
+        else {
+            console.log("Outside the boundary");
+        }
+
+            queen.y= queen.y + steps;
             console.log("direction S");
             break;
 
-        case "direction E":
+        case "E":
+            temp = queen.y + steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
+            queen.x = queen.x + steps;
             console.log("direction E");
             break;
 
-        case "direction W":
+        case "W":
+            temp = queen.x + steps;
+            if(boundary(temp) == true) {
+                queen.x = temp;
+            }
+            else {temp = queen.x + steps;
+               s    
+                console.log("Outside the boundary");
+            }
+
+            queen.x = queen.X - steps;
             console.log("direction W");
             break;
 
-        case "direction NE":
+        case " NE":
+            temp = queen.y + steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
+
+        
+
+            queen.y = queen.y * queen.x - steps;
             console.log("direction NE");
             break;
 
-        case "direction NW":
+        case " NW":
+            temp = queen.y + steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
+
+            queen.y = queen.y * queen.x + steps;
             console.log("direction NW");
             break;
 
-        case "direction SE":
-            console.log("direction SE");
+        case " SE":
+            temp = queen.y + steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
+
+            queen.y = queen.y * queen.x + steps;
+             console.log("direction SE");
             break;
 
-        case "direction SW":
+        case " SW":
+            temp = queen.y + steps;
+            if(boundary(temp) == true) {
+                queen.y = temp;
+            }
+            else {
+                console.log("Outside the boundary");
+            }
+
+            queen.y = queen.y * queen.x - steps;
             console.log("direction SW");
             break;
 
 
-
-
-
-
-
-
-
     }
-
 }
 
-function MoveForward(N, S, E, W, NE, NW, SE, SW) {
 
-    var move = N,
-        S, E, W, NE, NW, SE, SW;
-
-    for (i = 1; i < 8; i++);
-    if (y + 1 < 8)
-
-
-
-
-
-
-
-
-
+function boundary(position) {
+    if(position > 7 || position <0) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
+// function MoveForward(N, S, E, W, NE, NW, SE, SW)
